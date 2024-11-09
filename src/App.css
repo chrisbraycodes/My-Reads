@@ -1,0 +1,191 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
+
+/* Global Styling */
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: #f5f5f5; /* Light gray background */
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.list-books-title h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: white;
+  background-color: #2e7c31;
+  padding: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Bookshelf Styling */
+.bookshelf {
+  margin: 20px;
+}
+
+/* Bookshelf Title */
+.bookshelf-title {
+  font-size: 1.25rem;
+  color: #444;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Bookshelf Books - Flex Layout for Side-by-Side Books */
+.bookshelf-books {
+  display: flex; /* Use flexbox for horizontal alignment */
+  flex-wrap: wrap; /* Wrap books to the next row if necessary */
+  gap: 20px; /* Space between books */
+  justify-content: flex-start; /* Align books to the left */
+  align-items: flex-start; /* Align items at the top */
+  padding: 20px;
+  margin: 0 auto; /* Center the bookshelf content horizontally */
+  width: 80%; /* Limit the width of the bookshelf */
+  box-sizing: border-box;
+}
+
+
+/* Book Divs (Ensure Fixed Width for Side-by-Side Layout) */
+.book {
+  width: 140px; /* Control the width of each book */
+  display: flex;
+  flex-direction: column; /* Stack book content vertically */
+  align-items: center; /* Center content horizontally */
+  gap: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover Effect for Book */
+.book:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Book Cover */
+.book-cover {
+  width: 128px;
+  height: 193px;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+/* Book Title */
+.book-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Book Authors */
+.book-authors {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Dropdown Menu Below the Book */
+.book-shelf-changer {
+  margin-top: 10px;
+  width: 100%; /* Full width of the book item */
+}
+
+.book-shelf-changer select {
+  width: 100%; /* Dropdown takes full width */
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #2e7c31;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  cursor: pointer;
+}
+
+.book-shelf-changer select:hover {
+  background-color: #1e5e22;
+}
+
+/* Open Search Button (Add Book Button) */
+.open-search {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 10; /* Ensure it's on top of other elements */
+}
+
+.open-search a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #2e7c31;
+  background-image: url('./icons/add.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+/* Hover Effect for Add Button */
+.open-search a:hover {
+  background-color: #1e5e22;
+  transform: scale(1.1);
+}
+
+/* Search Books Results */
+.search-books-results {
+  padding: 20px;
+}
+
+/* Books Grid - Flexbox Layout for Side-by-Side Items */
+.books-grid {
+  display: flex; /* Use Flexbox for horizontal alignment */
+ 
+  flex-wrap: wrap; /* Allow books to wrap to the next row if needed */
+ 
+  gap: 20px; /* Space between books */
+  justify-content: flex-start; /* Align books to the left */
+  padding: 0;
+  margin: 0;
+  list-style: none; /* Remove bullets from list */
+}
+
+/* Individual Book Item */
+.books-grid li {
+  list-style: none;
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .book {
+    width: 45%; /* Two books per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .book {
+    width: 100%; /* One book per row on smaller screens */
+  }
+}
